@@ -14,7 +14,6 @@ const Introduction = () => {
       </div>
       <div></div>
       <div></div>
-      <Outlet/>
     </div>
   )
 }

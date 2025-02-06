@@ -4,7 +4,6 @@ import { Outlet } from 'react-router-dom'
 const Advanceconcept = () => {
   return (
     <div>Advanceconcept
-        <Outlet/>
     </div>
   )
 }

@@ -10,11 +10,10 @@ const Sidebar = () => {
         <h2>Introduction</h2>
         <div className='subtopic'>
         <Link className='link' to="introduction" >Introduction</Link>
-        <Link className='link' to="introduction/gettingstarted">Getting started</Link>
-        <Link className='link' to="introduction/features">Features</Link>
-        <Link className='link' to="introduction/component">Components</Link>
-        <Link className='link' to="introduction/conditional">Conditional Rendering</Link>
-        <Link className='link' to="introduction/jsx">JSX</Link>
+        <Link className='link' to="gettingstarted">Getting started</Link>
+        <Link className='link' to="features">Features</Link>
+        <Link className='link' to="component">Components</Link>
+        <Link className='link' to="jsx">JSX</Link>
 
         </div>
         {/* fragments */}
@@ -31,6 +30,11 @@ const Sidebar = () => {
         <Link className='link' to="props">Props</Link>
 
         </div>
+        <h2>Conditional Rendering</h2>
+
+        <div className="subtopic">
+        <Link className='link' to="conditional">Conditional Rendering</Link>
+        </div>
 
 
         {/* hooks */}
@@ -38,15 +42,15 @@ const Sidebar = () => {
 
         <div className='subtopic'>
         <Link className='link' to="hooks">Hooks</Link>
-        <Link className='link' to="hooks/usestate">useState</Link>
-        <Link className='link' to="hooks/useref">useRef</Link>
-        <Link className='link' to="hooks/useeffect">useEffect</Link>
-        <Link className='link' to="hooks/usecontext">useContext</Link>
-        <Link className='link' to="hooks/forwardref">forwardRef</Link>
-        <Link className='link' to="hooks/usememo">useMemo</Link>
-        <Link className='link' to="hooks/usecallback">useCallback</Link>
-        <Link className='link' to="hooks/usenavigate">useNavigate</Link>
-        <Link className='link' to="hooks/usereducer">useReducer</Link>
+        <Link className='link' to="usestate">useState</Link>
+        <Link className='link' to="useref">useRef</Link>
+        <Link className='link' to="useeffect">useEffect</Link>
+        <Link className='link' to="usecontext">useContext</Link>
+        <Link className='link' to="forwardref">forwardRef</Link>
+        <Link className='link' to="usememo">useMemo</Link>
+        <Link className='link' to="usecallback">useCallback</Link>
+        <Link className='link' to="usenavigate">useNavigate</Link>
+        <Link className='link' to="usereducer">useReducer</Link>
 
         </div>
         {/* form handling */}
@@ -61,10 +65,10 @@ const Sidebar = () => {
        <h2>Advance Concept</h2>
        <div className='subtopic'>
        <Link className='link' to="advanceconcept">Advance Concept</Link>
-        <Link className='link' to="advanceconcept/reactmemo">ReactMemo</Link>
-        <Link className='link' to="advanceconcept/axios">Axios</Link>
-        <Link className='link' to="advanceconcept/hoc">HOC</Link>
-        <Link className='link' to="advanceconcept/privaterouting">Private Routing</Link>
+        <Link className='link' to="reactmemo">ReactMemo</Link>
+        <Link className='link' to="axios">Axios</Link>
+        <Link className='link' to="hoc">HOC</Link>
+        <Link className='link' to="privaterouting">Private Routing</Link>
        </div>
         
     </div>

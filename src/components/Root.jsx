@@ -48,22 +48,21 @@ const routes = createBrowserRouter([
           {
             path: "introduction",
             element: <Introduction />,
-            children: [
-              { path: "component", element: <Comp /> },
-              { path: "conditional", element: <ConditionalRendering /> },
-              { path: "features", element: <Features /> },
-              { path: "gettingstarted", element: <GettingStarted /> },
-              { path: "jsx", element: <JsxComp /> }
-            ]
+            
           },
+          { path: "component", element: <Comp /> },
+          { path: "conditional", element: <ConditionalRendering /> },
+          { path: "features", element: <Features /> },
+          { path: "gettingstarted", element: <GettingStarted /> },
+          { path: "jsx", element: <JsxComp /> },
           { path: "formhandling", element: <Formhandling /> },
           { path: "fragments", element: <Fragments /> },
           { path: "props", element: <Props /> },
           {
             path: "hooks",
             element: <Hooks />,
-            children: [
-              { path: "usestate", element: <Usestate /> },
+          },
+          { path: "usestate", element: <Usestate /> },
               { path: "forwardref", element: <Forwardref /> },
               { path: "usecallback", element: <Usecallback /> },
               { path: "usecontext", element: <Usecontext /> },
@@ -71,19 +70,16 @@ const routes = createBrowserRouter([
               { path: "usememo", element: <Usememo /> },
               { path: "usenavigate", element: <Usenavigate /> },
               { path: "usereducer", element: <Usereducer /> },
-              { path: "useref", element: <Useref /> }
-            ]
-          },
+              { path: "useref", element: <Useref /> },
           {
             path: "advanceconcept",
             element: <Advanceconcept />,
-            children: [
-              { path: "axios", element: <Axios /> },
-              { path: "hoc", element: <Hoc /> },
-              { path: "privaterouting", element: <PrivateRouting /> },
-              { path: "reactmemo", element: <Reactmemo /> }
-            ]
-          }
+           
+          },
+          { path: "axios", element: <Axios /> },
+          { path: "hoc", element: <Hoc /> },
+          { path: "privaterouting", element: <PrivateRouting /> },
+          { path: "reactmemo", element: <Reactmemo /> }
         ]
       },
       { path: "login", element: <Login /> },
