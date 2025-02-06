@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
 import Dashboard from './Dashboard'
 import Login from './Login'
 import SignUp from './SignUp'
@@ -26,96 +27,73 @@ import Formhandling from './topics/form/Formhandling'
 import Fragments from './topics/fragment/Fragment'
 import Props from './topics/props/Props'
 
-const Root = () => {
-  const routes = createBrowserRouter([ 
-    {
-        path: "/",
-        element: <Dashboard/>,
+import Advanceconcept from './topics/advanceconcept/Advanceconcept'
+import Axios from './topics/advanceconcept/Axios'
+import Hoc from './topics/advanceconcept/Hoc'
+import PrivateRouting from './topics/advanceconcept/PrivateRouting'
+import Reactmemo from './topics/advanceconcept/Reactmemo'
+import FirstPage from './FirstPage'
+import Home from './Home'
+
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+    children: [
+      { path: "", element: <FirstPage /> },
+      {
+        path: "home",
+        element: <Home />,
         children: [
           {
-            path: "/login",
-            element: <Login/>
-          },
-          {
-            path: "/signup",
-            element: <SignUp/>
-          },{
-            path: "/introduction",
-            element: <Introduction/>,
+            path: "introduction",
+            element: <Introduction />,
             children: [
-              {
-                path: "/introduction/component",
-                element: <Comp/>
-              },
-              {
-                path: "/introduction/conditional",
-                element: <ConditionalRendering/>
-              },{
-                path: "/introduction/features",
-                element: <Features/>
-              },
-              {
-                path: "/introduction/gettingstarted",
-                element: <GettingStarted/>
-              },
-              {
-                path: "/introduction/jsx",
-                element: <JsxComp/>
-              }
+              { path: "component", element: <Comp /> },
+              { path: "conditional", element: <ConditionalRendering /> },
+              { path: "features", element: <Features /> },
+              { path: "gettingstarted", element: <GettingStarted /> },
+              { path: "jsx", element: <JsxComp /> }
+            ]
+          },
+          { path: "formhandling", element: <Formhandling /> },
+          { path: "fragments", element: <Fragments /> },
+          { path: "props", element: <Props /> },
+          {
+            path: "hooks",
+            element: <Hooks />,
+            children: [
+              { path: "usestate", element: <Usestate /> },
+              { path: "forwardref", element: <Forwardref /> },
+              { path: "usecallback", element: <Usecallback /> },
+              { path: "usecontext", element: <Usecontext /> },
+              { path: "useeffect", element: <Useeffect /> },
+              { path: "usememo", element: <Usememo /> },
+              { path: "usenavigate", element: <Usenavigate /> },
+              { path: "usereducer", element: <Usereducer /> },
+              { path: "useref", element: <Useref /> }
             ]
           },
           {
-            path: "/formhandling",
-            element: <Formhandling/>
-          },
-          {
-            path : "/fragments",
-            element: <Fragments/>
-          },
-          {
-            path : "/props",
-            element: <Props/>
-          },
-          {
-            path : "/hooks",
-            element: <Hooks/>,
+            path: "advanceconcept",
+            element: <Advanceconcept />,
             children: [
-              {
-                path: "/hooks/usestate",
-                element: <Usestate/>
-              },
-              {
-                path: "/hooks/forwardref",
-                element: <Forwardref/>
-              },{
-                path: "/hooks/usecallback",
-                element: <Usecallback/>
-              },{
-                path: "/hooks/usecontext",
-                element: <Usecontext/>
-              },{
-                path: "/hooks/useeffect",
-                element: <Useeffect/>
-              },{
-                path: "/hooks/usememo",
-                element: <Usememo/>
-              },{
-                path: "/hooks/usenavigate",
-                element: <Usenavigate/>
-              },{
-                path: "/hooks/usereducer",
-                element: <Usereducer/>
-              },{
-                path: "/hooks/useref",
-                element: <Useref/>
-              }
+              { path: "axios", element: <Axios /> },
+              { path: "hoc", element: <Hoc /> },
+              { path: "privaterouting", element: <PrivateRouting /> },
+              { path: "reactmemo", element: <Reactmemo /> }
             ]
           }
-                  
         ]
-      }
+      },
+      { path: "login", element: <Login /> },
+      { path: "signup", element: <SignUp /> }
+    ]
+  }
 ])
-  return <RouterProvider router={routes}/>
+
+const Root = () => {
+  return <RouterProvider router={routes} />
 }
 
 export default Root
