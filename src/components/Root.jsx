@@ -7,7 +7,7 @@ import SignUp from './SignUp'
 
 import Introduction from './topics/basics/Introduction'
 import Comp from './topics/basics/Comp'
-import ConditionalRendering from './topics/basics/ConditionalRendering'
+import ConditionalRendering from './topics/ConditionalRendering/ConditionalRendering'
 import Features from './topics/basics/Features'
 import GettingStarted from './topics/basics/GettingStarted'
 import JsxComp from './topics/basics/JsxComp'

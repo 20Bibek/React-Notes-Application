@@ -1,0 +1,348 @@
+/* •	#007672 
+•	#96C7C5 */
+
+.firstpage{
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+}
+.scrolling-navbar {
+    width: 100%;
+    background: black ;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 15px 0;
+    position: relative;
+}
+
+.menu {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 10s linear infinite;
+    gap: 30px;
+}
+.menu:hover{
+    animation: none;
+}
+
+.menu a {
+    color: #96C7C5;
+font-weight: 600;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 20px;
+    display: inline-block;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.textbox{
+    width: 80%;
+    height: auto;
+    margin-top: 40px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content:center;
+    gap: 20px;
+}
+.textbox h4{
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: grey;
+}
+.textbox h1{
+    font-size: 55px;
+    font-weight: 500;
+}
+.textbox p{
+    font-size: 18px;
+    color: rgb(61, 61, 61);
+}
+.textbox button{
+    padding: 20px 70px;
+    background-color: #007672 ;
+    border: 2px solid #007672;
+    border-radius: 50px;
+    margin-top: 50px;
+    border-bottom-right-radius: 2px;
+    transition: all 0.3s;
+}
+.textbox button:hover{
+    background-color: white;
+    border: 2px solid #007672;
+}
+.textbox button:hover .btnlink{
+    color: #007672;
+}
+.textbox .btnlink{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.gif1 {
+    height: 500px;
+    width: 55%;
+    background-color: #1f1e1e;
+    position: absolute;
+    right: 0;
+    top: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.gif1 img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    animation: pulse 2s infinite alternate ease-in-out;
+}
+
+/* Pulse Animation - Slight Zoom In & Out */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.06);
+    }
+}
+
+.colorbox{
+    width: 100%;
+    height: 415px;
+    background-color: #007672;
+    position: absolute;
+    top: 800px;
+    z-index: -1;
+}
+
+/* /textbox 2 */
+.textbox2 {
+    width: 380px;
+    position: absolute;
+    top: 900px;
+    left: 100px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .textbox2 h2 {
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  
+
+  .content-box {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+  }
+  
+  .show {
+    height: auto; /* Adjust based on content size */
+    opacity: 1;
+  }
+  
+  .top-bar,
+  .bottom-bar {
+    position: absolute;
+    height: 2px;
+    background:#dcdede;
+    width: 0%;
+  }
+  
+  .top-bar {
+    top: 0;
+    left: 0;
+  }
+  
+  .bottom-bar {
+    bottom: 0;
+    right: 0;
+  }
+
+  .show .top-bar {
+    animation: expand-left-to-right 3s forwards;
+  }
+  
+  .show .bottom-bar {
+    animation: expand-right-to-left 3s forwards;
+  }
+  .content {
+    color: rgb(195, 192, 192);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    animation: fade-in 0.5s ease-in-out;
+  }
+  
+  /* Keyframes for Animations */
+  @keyframes expand-left-to-right {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes  expand-right-to-left {
+    from {
+        width: 0%;
+      }
+      to {
+        width: 100%;
+      }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+/* slider box */
+
+
+.sliderbox{
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 1250px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    gap: 20px;
+}
+.sliderbox .box1{
+    width: 4%;
+    height: 100%;
+    opacity: 0.6;
+    background-color: #1f1e1e;
+}
+.sliderbox .box2{
+    width: 9%;
+    opacity: 0.8;
+    height: 100%;
+    background-color: #1f1e1e;
+
+}
+.sliderbox .box4{
+    width: 9%;
+    opacity: 0.8;
+    height: 100%;
+    background-color: #1f1e1e;
+
+}
+.sliderbox .box5{
+    width: 4%;
+    height: 100%;
+    opacity: 0.6;
+    background-color: #1f1e1e;
+}
+.box1 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.box2 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}.box4 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}.box5 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.sliderbox .box3{
+    width: 70%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.sliderbox .box3 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+@keyframes slideImages {
+    0% { opacity: 1; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.sliderbox .box3 img:nth-child(1) { animation: slideImages 10s infinite 0s; }
+.sliderbox .box3 img:nth-child(2) { animation: slideImages 10s infinite 2s; }
+.sliderbox .box3 img:nth-child(3) { animation: slideImages 10s infinite 4s; }
+
+.textbox3{
+ width: 100%;
+ height: 300px;
+ position: absolute;
+ top: 1800px;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ gap: 30px;
+ padding: 30px;
+}
+.textbox3 h1{
+    width: 70%;
+    font-size:40px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.textbox3 button{
+    padding: 20px 70px;
+    background-color: #007672 ;
+    border: 2px solid #007672;
+    border-radius: 50px;
+    margin-top: 50px;
+    border-bottom-right-radius: 2px;
+}
+.textbox3 .btnlink{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.textbox3 button:hover{
+    background-color: white;
+    border: 2px solid #007672;
+}
+.textbox3 button:hover .btnlink{
+    color: #007672;
+}
