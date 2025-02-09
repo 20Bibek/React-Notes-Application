@@ -1,5 +1,5 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Router, RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import Dashboard from './Dashboard'
 import Login from './Login'
@@ -35,6 +35,8 @@ import Reactmemo from './topics/advanceconcept/Reactmemo'
 import FirstPage from './FirstPage'
 import Home from './Home'
 
+import Routing from './topics/router/Router'
+
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -46,7 +48,7 @@ const routes = createBrowserRouter([
         element: <Home />,
         children: [
           {
-            path: "introduction",
+            path: "",
             element: <Introduction />,
             
           },
@@ -79,7 +81,12 @@ const routes = createBrowserRouter([
           { path: "axios", element: <Axios /> },
           { path: "hoc", element: <Hoc /> },
           { path: "privaterouting", element: <PrivateRouting /> },
-          { path: "reactmemo", element: <Reactmemo /> }
+          { path: "reactmemo", element: <Reactmemo /> },
+          {
+            path: "routing",
+            element: <Routing/>
+
+          }
         ]
       },
       { path: "login", element: <Login /> },

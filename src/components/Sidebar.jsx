@@ -9,7 +9,7 @@ const Sidebar = () => {
         {/* Introduction */}
         <h2>Introduction</h2>
         <div className='subtopic'>
-        <Link className='link' to="introduction" >Introduction</Link>
+        <Link className='link' >Introduction</Link>
         <Link className='link' to="gettingstarted">Getting started</Link>
         <Link className='link' to="features">Features</Link>
         <Link className='link' to="component">Components</Link>
@@ -58,6 +58,13 @@ const Sidebar = () => {
         <h2>Forms</h2>
         <div className='subtopic'>
         <Link className='link' to="formhandling">Form Handling</Link>
+        </div>
+
+        {/* routing */}
+
+        <h2>Routing</h2>
+        <div className="subtopic">
+          <Link className='link' to="routing">Routing</Link>
         </div>
 
         {/* advance concept */}

@@ -16,8 +16,9 @@
 }
 .sidebar h2{
     font-weight: 800;
-    text-decoration: underline;
+    text-decoration: underline; 
     color: #fff;
+    width: 100%;
 }
 .sidebar>.subtopic{
     display: flex;
@@ -28,6 +29,7 @@
     width: 70%;
     /* background-color: aqua; */
     padding: 10px;
+    width: 100%;
     margin-left: 50px;
     
 }

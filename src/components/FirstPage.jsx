@@ -38,7 +38,7 @@ const FirstPage = () => {
     <div className='firstpage'>
        <div className="scrolling-navbar">
             <div className="menu">
-                <a href=""><Link to="home/introduction">Introduction</Link></a>
+                <a href=""><Link to="home/features">Features</Link></a>
                 <a href="#">About</a>
                 <a href="#">Services</a>
                 <a href="#">Portfolio</a>

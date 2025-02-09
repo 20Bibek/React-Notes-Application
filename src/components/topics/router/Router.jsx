@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Router = () => {
+const Routing = () => {
   return (
     <div>Router</div>
   )
 }
 
-export default Router
+export default Routing
