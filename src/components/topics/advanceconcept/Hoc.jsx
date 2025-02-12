@@ -1,61 +1,74 @@
-import React from 'react'
+import React from 'react';
 
 const Hoc = () => {
+  const data = {
+    topic: "Higher-Order Components (HOC)",
+    sub_topics: [
+      {
+        heading: "What is a Higher-Order Component (HOC)?",
+        points: [
+          "A Higher-Order Component (HOC) is a function that takes a component as input and returns an enhanced component.",
+          "It follows the higher-order function pattern in JavaScript.",
+          "HOCs are not built-in but are a pattern for reusing component logic."
+        ]
+      },
+      {
+        heading: "Why Use Higher-Order Components?",
+        points: [
+          "✅ Code Reusability – Share logic across multiple components.",
+          "✅ Separation of Concerns – Keep UI and logic separate.",
+          "✅ Enhancing Components Dynamically – Add features like authentication, logging, or performance tracking."
+        ],
+        image: "https://cdn.prod.website-files.com/670cbf146221ee06c3cdd761/676277a637626ac815ef0b04_676277896780c79dde32dd07_How%2520to%2520Use%2520Higher-Order%2520Components%2520(HOCs)%2520in%2520React.webp"
+      },
+      {
+        heading: "Important Notes on HOCs",
+        points: [
+          "📌 Avoid modifying the original component directly. Always return a new component.",
+          "📌 Preserve Props – Use ...props to pass down all original props.",
+          "📌 Use Meaningful Names – Wrap components with names like withAuth, withLogging, etc.",
+          "📌 Can Be Nested – Multiple HOCs can be applied to a single component."
+        ]
+      },
+      {
+        heading: "HOCs vs. Custom Hooks",
+        points: [
+          "Feature: Higher-Order Component (HOC) vs. Custom Hook",
+          "✅ Code Reusability – Yes for both.",
+          "⚠ Performance – HOCs can cause extra renders, Custom Hooks are more efficient.",
+          "⚠ Readability – HOCs can be harder to debug, Custom Hooks are easier to read.",
+          "✅ Composition – Both can be combined for complex logic."
+        ]
+      },
+      {
+        heading: "When to Use HOCs?",
+        points: [
+          "✅ When you need to add the same behavior to multiple components (e.g., logging, authentication, analytics).",
+          "✅ When modifying a component’s props dynamically without modifying its code.",
+          "✅ When adding lifecycle methods to functional components (before hooks were introduced)."
+        ]
+      }
+    ]
+  };
+
   return (
     <div className='container'>
-      <div className="section">
-        <h2>What is a Higher-Order Component (HOC)?</h2>
-        <p>A Higher-Order Component (HOC) is a function that takes a component as input and returns an enhanced component with additional functionality. It follows the higher-order function pattern in JavaScript, where functions can accept other functions as arguments and return new functions.
-        HOCs are not a built-in feature of React, but rather a pattern used for reusing component logic.
-        </p>
-        <h2>Why Use Higher-Order Components?</h2>
-        <p>
-        HOCs help solve common problems such as:
-        ✅ Code Reusability – Share logic across multiple components.
-        ✅ Separation of Concerns – Keep UI and logic separate.
-        ✅ Enhancing Components Dynamically – Add features like authentication, logging, or performance tracking without modifying the original component.
-        </p>
-        <img src="https://cdn.prod.website-files.com/670cbf146221ee06c3cdd761/676277a637626ac815ef0b04_676277896780c79dde32dd07_How%2520to%2520Use%2520Higher-Order%2520Components%2520(HOCs)%2520in%2520React.webp" alt="" />
-      </div>
-
-      <div className="section">
-        <h2>Important Notes on HOCs</h2>
-        <p>
-        📌 Avoid modifying the original component directly. Always return a new component.
-📌 Preserve Props – Use ...props to pass down all original props.
-📌 Use Meaningful Names – Wrap components with meaningful names like withAuth, withLogging, etc.
-📌 Can Be Nested – You can apply multiple HOCs to a single component.
-
-        </p>
-        <h2>HOCs vs. Custom Hooks</h2>
-        <pre>
-          Feature	                   Higher-Order Component (HOC)	    Custom Hook
-        </pre>
-        <pre>
-        Code Reusability	        ✅ Yes	                              ✅ Yes
-        </pre>
-        <pre>
-        Performance	             ⚠ Can cause extra renders	     ✅ More efficient
-        </pre>
-        <pre>
-        Readability	          ⚠ Harder to debug	             ✅ Easier to read
-        </pre>
-        <pre>
-        Composition	          ✅ Can combine multiple HOCs	    ✅ Composable
-        </pre>
-      </div>
-      <div className="section">
-        <h2>
-        When to Use HOCs?
-        </h2>
-        <p>
-        ✅ When you need to add the same behavior to multiple components (e.g., logging, authentication, analytics).
-✅ When you want to modify a component’s props dynamically without modifying its code.
-✅ When you need to add lifecycle methods to functional components (before hooks were introduced).
-        </p>
-      </div>
+      <h1>{data.topic}</h1>
+      {data.sub_topics.map((ele, index) => (
+        <section key={index} className='section'>
+          {ele.heading && <h2>{ele.heading}</h2>}
+          {ele.points && (
+            <ul>
+              {ele.points.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
+          )}
+          {ele.image && <img src={ele.image} alt='' />}
+        </section>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Hoc
+export default Hoc;

@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./styles/sidebar.css"
+import Search from './Search'
 
 const Sidebar = () => {
   return (
     <div className='sidebar'>
+      <Search/>
       
         {/* Introduction */}
         <h2>Introduction</h2>

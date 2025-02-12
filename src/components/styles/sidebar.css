@@ -1,7 +1,7 @@
 .sidebar{
     height: 92.7vh;
     width: 270px;
-    background-color:#000000 ;
+    background-color:#ffffff ;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -17,7 +17,7 @@
 .sidebar h2{
     font-weight: 800;
     text-decoration: underline; 
-    color: #fff;
+    color: #29017a;
     width: 100%;
 }
 .sidebar>.subtopic{
@@ -34,6 +34,6 @@
     
 }
 .sidebar>.subtopic>a{
-    color: #fff;
+    color: #000000;
     font-size: 1rem;
 }

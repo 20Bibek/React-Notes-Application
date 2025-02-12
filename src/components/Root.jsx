@@ -36,6 +36,8 @@ import FirstPage from './FirstPage'
 import Home from './Home'
 
 import Routing from './topics/router/Router'
+import ContactForm from './Contact'
+import About from './About'
 
 const routes = createBrowserRouter([
   {
@@ -90,7 +92,14 @@ const routes = createBrowserRouter([
         ]
       },
       { path: "login", element: <Login /> },
-      { path: "signup", element: <SignUp /> }
+      { path: "signup", element: <SignUp /> },
+      {
+        path : "contact",element: <ContactForm/>,
+      },
+      {
+        path: "about",
+        element : <About/>
+      }
     ]
   }
 ])

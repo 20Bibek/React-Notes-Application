@@ -1,163 +1,104 @@
 import React from "react";
-import { FaCheckCircle, FaBug, FaSyncAlt, FaClipboardList, FaPlus, FaMinus, FaRedo, FaTrash, FaLightbulb, FaExclamationTriangle, FaListAlt } from "react-icons/fa";
-import "./usereducer.css";
+import { FaRocket, FaCheckCircle, FaExclamationTriangle, FaSyncAlt, FaBolt, FaListAlt, FaBrain, FaFilter, FaLightbulb, FaBug, FaClipboardList } from "react-icons/fa";
+// import "./usereducer.css";
 
-const Usereducer = () => {
+const useMemoData = {
+  title: "useMemo (Performance Optimization)",
+  description: "The useMemo hook in React optimizes performance by memoizing expensive calculations. It prevents unnecessary recalculations when a component re-renders, ensuring better efficiency.",
+  whyUse: [
+    { icon: <FaBolt />, text: "Avoids unnecessary calculations – Only recalculates values when dependencies change." },
+    { icon: <FaRocket />, text: "Improves performance – Helps when working with large datasets or expensive computations." },
+    { icon: <FaSyncAlt />, text: "Prevents unnecessary re-renders – Ensures that functions return cached results instead of recalculating every time." }
+  ],
+  syntax: "const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);",
+  syntaxExplanation: [
+    { icon: <FaBrain />, text: "useMemo caches (memoizes) the result of computeExpensiveValue(a, b)." },
+    { icon: <FaClipboardList />, text: "It only recalculates when a or b change." },
+    { icon: <FaCheckCircle />, text: "If a and b do not change, it returns the previously stored value, avoiding unnecessary calculations." }
+  ],
+  example: {
+    title: "Example: Optimizing a Slow Function",
+    code: `import { useState, useMemo } from "react";
+
+const slowFunction = (num) => {
+  console.log("Computing...");
+  for (let i = 0; i < 1000000000; i++) {}
+  return num * 2;
+};
+
+const MemoExample = () => {
+  const [count, setCount] = useState(0);
+  const [input, setInput] = useState(1);
+
+  const computedValue = useMemo(() => slowFunction(input), [input]);
+
+  return (
+    <div>
+      <h2>Computed Value: {computedValue}</h2>
+      <input type="number" value={input} onChange={(e) => setInput(Number(e.target.value))} />
+      <button onClick={() => setCount(count + 1)}>Re-render ({count})</button>
+    </div>
+  );
+};
+
+export default MemoExample;`,
+    points: [
+      { icon: <FaListAlt />, text: "slowFunction(input) is an expensive computation." },
+      { icon: <FaCheckCircle />, text: "useMemo caches the result to prevent unnecessary calculations." },
+      { icon: <FaRocket />, text: "The function only re-runs when input changes, not on every render." }
+    ]
+  },
+  commonMistakes: [
+    { icon: <FaExclamationTriangle />, text: "❌ Using useMemo everywhere – ✅ Only use it when necessary. Premature optimization can make code harder to read." },
+    { icon: <FaExclamationTriangle />, text: "❌ Not adding dependencies – ✅ Always specify all dependencies in the dependency array." },
+    { icon: <FaExclamationTriangle />, text: "❌ Using useMemo instead of useCallback for functions – ✅ If you need to memoize a function, use useCallback instead." }
+  ]
+};
+
+const Usememo = () => {
   return (
     <div className="container">
       <h1 className="title">
-        <FaSyncAlt /> useReducer (Alternative to useState for complex state logic)
+        <FaSyncAlt /> {useMemoData.title}
       </h1>
       <hr />
-
-      <p>
-        The <code>useReducer</code> hook is an alternative to <code>useState</code> for managing
-        complex state logic in React. It helps when you have multiple state updates that depend on the previous state.
-      </p>
-
+      <p>{useMemoData.description}</p>
       <div className="section">
-        <h2>🎯 Why Use useReducer Instead of useState?</h2>
+        <h2>🎯 Why Use useMemo?</h2>
         <ul>
-          <li><FaCheckCircle /> Useful for complex state logic – When multiple state updates depend on each other.</li>
-          <li><FaClipboardList /> Better structure – Keeps state updates organized and predictable.</li>
-          <li><FaSyncAlt /> Good for state transitions – Works well with conditions like "if this happens, do that".</li>
-          <li><FaBug /> Easier debugging – State changes are centralized in a single function (reducer function).</li>
+          {useMemoData.whyUse.map((item, index) => (
+            <li key={index}>{item.icon} {item.text}</li>
+          ))}
         </ul>
       </div>
-
       <div className="section">
-        <h2>🔹 Basic Syntax of useReducer</h2>
-        <pre>
-{`const [state, dispatch] = useReducer(reducerFunction, initialState);
-// state – Current state value.
-// dispatch – Function used to trigger state changes.
-// reducerFunction – Function that determines how state updates.
-// initialState – Starting value of the state.`}
-        </pre>
-      </div>
-
-      <div className="section">
-        <h2>✅ How it Works</h2>
+        <h2>🔹 Basic Syntax of useMemo</h2>
+        <pre>{useMemoData.syntax}</pre>
         <ul>
-          <li><FaPlus /> <b>ADD_TODO</b> → Adds a new todo to the list.</li>
-          <li><FaTrash /> <b>REMOVE_TODO</b> → Removes a todo by ID.</li>
-          <li><FaListAlt /> Keeps the logic structured instead of handling everything in useState.</li>
+          {useMemoData.syntaxExplanation.map((item, index) => (
+            <li key={index}>{item.icon} {item.text}</li>
+          ))}
         </ul>
       </div>
-
       <div className="section">
-        <h2>🚀 When Should You Use useReducer?</h2>
+        <h2>🏆 {useMemoData.example.title}</h2>
+        <pre>{useMemoData.example.code}</pre>
         <ul>
-          <li><FaCheckCircle /> When state depends on the previous state (e.g., counters, lists).</li>
-          <li><FaLightbulb /> When state logic is complex (e.g., multiple actions).</li>
-          <li><FaClipboardList /> When you need predictable state updates (e.g., form handling, authentication).</li>
-          <li><FaSyncAlt /> When working with Redux-like state management.</li>
+          {useMemoData.example.points.map((item, index) => (
+            <li key={index}>{item.icon} {item.text}</li>
+          ))}
         </ul>
       </div>
-
       <div className="section">
         <h2>⚠️ Common Mistakes & Best Practices</h2>
         <ul>
-          <li>
-            <FaExclamationTriangle /> <b>❌ Using useReducer for simple state updates</b>  
-            <br /> ✅ Use <code>useState</code> when managing simple values like true/false or numbers.
-          </li>
-          <li>
-            <FaExclamationTriangle /> <b>❌ Modifying state directly inside the reducer</b>  
-            <br /> ✅ Always return a new state object from the reducer instead of mutating it.
-          </li>
-          <li>
-            <FaExclamationTriangle /> <b>❌ Using multiple useState for related data</b>  
-            <br /> ✅ Use <code>useReducer</code> when managing complex state transitions.
-          </li>
+          {useMemoData.commonMistakes.map((item, index) => (
+            <li key={index}>{item.icon} {item.text}</li>
+          ))}
         </ul>
       </div>
-
-      <div className="section">
-        <h2>🏆 Step-by-Step Example of useReducer</h2>
-        <h3>📝 Example: A Simple Counter App</h3>
-        <pre>
-{`import { useReducer } from "react";
-
-const counterReducer = (state, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return { count: state.count + 1 };
-    case "DECREMENT":
-      return { count: state.count - 1 };
-    case "RESET":
-      return { count: 0 };
-    default:
-      return state;
-  }
-};
-
-const initialState = { count: 0 };
-
-const Counter = () => {
-  const [state, dispatch] = useReducer(counterReducer, initialState);
-  return (
-    <div>
-      <h2>Counter: {state.count}</h2>
-      <button onClick={() => dispatch({ type: "INCREMENT" })}><FaPlus /></button>
-      <button onClick={() => dispatch({ type: "DECREMENT" })}><FaMinus /></button>
-      <button onClick={() => dispatch({ type: "RESET" })}><FaRedo /></button>
     </div>
   );
 };
 
-export default Counter;`}
-        </pre>
-      </div>
-
-      <div className="section">
-        <h2>🔥 Advanced Example: Managing a Todo List</h2>
-        <pre>
-{`import { useReducer, useState } from "react";
-
-const todoReducer = (state, action) => {
-  switch (action.type) {
-    case "ADD_TODO":
-      return [...state, { id: Date.now(), text: action.payload }];
-    case "REMOVE_TODO":
-      return state.filter(todo => todo.id !== action.payload);
-    default:
-      return state;
-  }
-};
-
-const initialTodos = [];
-
-const TodoApp = () => {
-  const [todos, dispatch] = useReducer(todoReducer, initialTodos);
-  const [text, setText] = useState("");
-
-  return (
-    <div>
-      <h2>Todo List</h2>
-      <input value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={() => dispatch({ type: "ADD_TODO", payload: text })}>
-        <FaPlus /> Add
-      </button>
-      <ul>
-        {todos.map(todo => (
-          <li key={todo.id}>
-            {todo.text}
-            <button onClick={() => dispatch({ type: "REMOVE_TODO", payload: todo.id })}>
-              <FaTrash />
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default TodoApp;`}
-        </pre>
-      </div>
-    </div>
-  );
-};
-
-export default Usereducer;
+export default Usememo;

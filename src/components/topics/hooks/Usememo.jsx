@@ -1,52 +1,29 @@
 import React from "react";
 import { FaRocket, FaCheckCircle, FaExclamationTriangle, FaSyncAlt, FaBolt, FaListAlt, FaBrain, FaFilter, FaLightbulb, FaBug, FaClipboardList } from "react-icons/fa";
-import "./usereducer.css";
+// import "./usereducer.css";
 
+const useMemoData = {
+  title: "useMemo (Performance Optimization)",
+  description: "The useMemo hook in React optimizes performance by memoizing expensive calculations. It prevents unnecessary recalculations when a component re-renders, ensuring better efficiency.",
+  reasons: [
+    { icon: <FaBolt />, text: "Avoids unnecessary calculations – Only recalculates values when dependencies change." },
+    { icon: <FaRocket />, text: "Improves performance – Helps when working with large datasets or expensive computations." },
+    { icon: <FaSyncAlt />, text: "Prevents unnecessary re-renders – Ensures that functions return cached results instead of recalculating every time." }
+  ],
+  syntax: "const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);",
+  syntaxExplanation: [
+    { icon: <FaBrain />, text: "useMemo caches (memoizes) the result of computeExpensiveValue(a, b)." },
+    { icon: <FaClipboardList />, text: "It only recalculates when a or b change." },
+    { icon: <FaCheckCircle />, text: "If a and b do not change, it returns the previously stored value, avoiding unnecessary calculations." }
+  ],
+  examples: [
+    {
+      title: "Optimizing a Slow Function",
+      code: `import { useState, useMemo } from "react";
 
-const Usememo = () => {
-  return (
-    <div className="container">
-      <h1 className="title">
-        <FaSyncAlt /> useMemo (Performance Optimization)
-      </h1>
-      <hr />
-
-      <p>
-        The <code>useMemo</code> hook in React optimizes performance by memoizing expensive calculations.
-        It prevents unnecessary recalculations when a component re-renders, ensuring better efficiency.
-      </p>
-
-      <div className="section">
-        <h2>🎯 Why Use useMemo?</h2>
-        <ul>
-          <li><FaBolt /> <b>Avoids unnecessary calculations</b> – Only recalculates values when dependencies change.</li>
-          <li><FaRocket /> <b>Improves performance</b> – Helps when working with large datasets or expensive computations.</li>
-          <li><FaSyncAlt /> <b>Prevents unnecessary re-renders</b> – Ensures that functions return cached results instead of recalculating every time.</li>
-        </ul>
-      </div>
-
-      <div className="section">
-        <h2>🔹 Basic Syntax of useMemo</h2>
-        <pre>
-{`const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);`}
-        </pre>
-        <ul>
-          <li><FaBrain /> <b>useMemo caches (memoizes)</b> the result of computeExpensiveValue(a, b).</li>
-          <li><FaClipboardList /> It only recalculates when <code>a</code> or <code>b</code> change.</li>
-          <li><FaCheckCircle /> If <code>a</code> and <code>b</code> do not change, it returns the previously stored value, avoiding unnecessary calculations.</li>
-        </ul>
-      </div>
-
-      <div className="section">
-        <h2>🏆 Step-by-Step Example of useMemo</h2>
-        <h3>📝 Example: Optimizing a Slow Function</h3>
-        <pre>
-{`import { useState, useMemo } from "react";
-
-// Simulating an expensive calculation  
 const slowFunction = (num) => {
   console.log("Computing...");
-  for (let i = 0; i < 1000000000; i++) {} // Delay loop  
+  for (let i = 0; i < 1000000000; i++) {}
   return num * 2;
 };
 
@@ -54,7 +31,6 @@ const MemoExample = () => {
   const [count, setCount] = useState(0);
   const [input, setInput] = useState(1);
 
-  // 🔥 Memoizing the expensive calculation  
   const computedValue = useMemo(() => slowFunction(input), [input]);
 
   return (
@@ -66,21 +42,17 @@ const MemoExample = () => {
   );
 };
 
-export default MemoExample;`}
-        </pre>
-        <ul>
-          <li><FaListAlt /> <b>slowFunction(input)</b> is an expensive computation (simulated with a loop).</li>
-          <li><FaCheckCircle /> <b>useMemo caches</b> the result to prevent unnecessary calculations.</li>
-          <li><FaRocket /> The function only re-runs when <b>input</b> changes, not on every render.</li>
-          <li><FaSyncAlt /> Clicking "Re-render" updates count but does not trigger slowFunction again.</li>
-        </ul>
-      </div>
-
-      <div className="section">
-        <h2>🔥 Optimizing a Large List with useMemo</h2>
-        <h3>Example: Optimizing a Large List Filtering</h3>
-        <pre>
-{`import { useState, useMemo } from "react";
+export default MemoExample;`,
+      explanation: [
+        { icon: <FaListAlt />, text: "slowFunction(input) is an expensive computation (simulated with a loop)." },
+        { icon: <FaCheckCircle />, text: "useMemo caches the result to prevent unnecessary calculations." },
+        { icon: <FaRocket />, text: "The function only re-runs when input changes, not on every render." },
+        { icon: <FaSyncAlt />, text: "Clicking 'Re-render' updates count but does not trigger slowFunction again." }
+      ]
+    },
+    {
+      title: "Optimizing a Large List Filtering",
+      code: `import { useState, useMemo } from "react";
 
 const users = [
   { id: 1, name: "Alice" },
@@ -93,7 +65,6 @@ const users = [
 const FilterList = () => {
   const [query, setQuery] = useState("");
 
-  // 🔥 Memoizing the filtered list  
   const filteredUsers = useMemo(() => {
     console.log("Filtering...");
     return users.filter((user) => user.name.toLowerCase().includes(query.toLowerCase()));
@@ -111,41 +82,67 @@ const FilterList = () => {
   );
 };
 
-export default FilterList;`}
-        </pre>
-        <ul>
-          <li><FaFilter /> Every time the user types in the search bar, <b>query</b> updates.</li>
-          <li><FaBrain /> <b>useMemo ensures</b> that the list is only filtered when <b>query</b> changes.</li>
-          <li><FaRocket /> Without useMemo, every re-render would re-run <b>users.filter()</b>, even if query is the same.</li>
-          <li><FaSyncAlt /> This improves performance, especially when handling large lists.</li>
-        </ul>
-      </div>
+export default FilterList;`,
+      explanation: [
+        { icon: <FaFilter />, text: "Every time the user types in the search bar, query updates." },
+        { icon: <FaBrain />, text: "useMemo ensures that the list is only filtered when query changes." },
+        { icon: <FaRocket />, text: "Without useMemo, every re-render would re-run users.filter(), even if query is the same." },
+        { icon: <FaSyncAlt />, text: "This improves performance, especially when handling large lists." }
+      ]
+    }
+  ],
+  commonMistakes: [
+    { icon: <FaExclamationTriangle />, text: "❌ Using useMemo everywhere. ✅ Only use it when necessary. Premature optimization can make code harder to read." },
+    { icon: <FaExclamationTriangle />, text: "❌ Not adding dependencies. ✅ Always specify all dependencies in the dependency array." },
+    { icon: <FaExclamationTriangle />, text: "❌ Using useMemo instead of useCallback for functions. ✅ If you need to memoize a function, use useCallback instead of useMemo." }
+  ]
+};
+
+const Usememo = () => {
+  return (
+    <div className="container">
+      <h1 className="title">{useMemoData.title}</h1>
+      <hr />
+      <p>{useMemoData.description}</p>
+      <hr />
 
       <div className="section">
-        <h2>🎯 When Should You Use useMemo?</h2>
+        <h2>🎯 Why Use useMemo?</h2>
         <ul>
-          <li><FaCheckCircle /> When working with <b>expensive calculations</b> (e.g., loops, API data processing).</li>
-          <li><FaClipboardList /> When <b>filtering/sorting large lists</b>.</li>
-          <li><FaBolt /> When optimizing <b>component re-renders</b> in performance-critical applications.</li>
-          <li><FaBrain /> When dealing with <b>complex derived state</b> that shouldn’t be recalculated unnecessarily.</li>
+          {useMemoData.reasons.map((reason, index) => (
+            <li key={index}>{reason.icon} {reason.text}</li>
+          ))}
         </ul>
       </div>
-
+      
+      <div className="section">
+        <h2>🔹 Basic Syntax</h2>
+        <pre>{useMemoData.syntax}</pre>
+        <ul>
+          {useMemoData.syntaxExplanation.map((item, index) => (
+            <li key={index}>{item.icon} {item.text}</li>
+          ))}
+        </ul>
+      </div>
+      
+      {useMemoData.examples.map((example, index) => (
+        <div className="section" key={index}>
+          <h2>{example.title}</h2>
+          <pre>{example.code}</pre>
+          <ul>
+            {example.explanation.map((exp, expIndex) => (
+              <li key={expIndex}>{exp.icon} {exp.text}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      
       <div className="section">
         <h2>⚠️ Common Mistakes & Best Practices</h2>
         <ul>
-          <li>
-            <FaExclamationTriangle /> <b>❌ Using useMemo everywhere</b>  
-            <br /> ✅ Only use it when necessary. Premature optimization can make code harder to read.
-          </li>
-          <li>
-            <FaExclamationTriangle /> <b>❌ Not adding dependencies</b>  
-            <br /> ✅ Always specify all dependencies in the dependency array.
-          </li>
-          <li>
-            <FaExclamationTriangle /> <b>❌ Using useMemo instead of useCallback for functions</b>  
-            <br /> ✅ If you need to memoize a function, use <code>useCallback</code> instead of <code>useMemo</code>.
-          </li>
+          {useMemoData.commonMistakes.map((mistake, index) => (
+            <li key={index}>{mistake.icon} {mistake.text}</li>
+          ))}
         </ul>
       </div>
     </div>

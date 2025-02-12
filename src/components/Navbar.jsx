@@ -5,14 +5,19 @@ import "./styles/navbar.css"
 const Navbar = () => {
   return (
     <nav className='navbar'>
-        <div className="logo">LOGO</div>
+        <div className="logo">
+          
+          <img src="logo2.png" alt="" style={{}}/>
+        </div>
         <ul>
+          <li><Link to="/about" className='link'>About</Link></li>
+          <li><Link to="/contact" className='link'>Contact</Link></li>
             <li><Link to="/login" className='link'>Login</Link></li>
-            <li><Link to="/signup" className='link'>SignUP</Link></li>
+            <li><Link to="/signup" className='link'>Sign Up</Link></li>
         </ul>
     </nav>
     
   )
 }
 
-export default Navbar
+export default Navbar
