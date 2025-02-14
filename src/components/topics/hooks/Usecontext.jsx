@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { RxDoubleArrowUp } from "react-icons/rx";
 // import "./usereducer.css";
 
 // Context Data
@@ -74,7 +75,7 @@ const ThemeSwitcher = () => {
   );
 };
 
-const Usecontext = () => {
+const Usecontext = ({scrollToTop}) => {
   return (
     <div className="container">
       <h1 className="title">{contextData.introduction.title}</h1>
@@ -130,6 +131,8 @@ const Usecontext = () => {
       <ThemeProvider>
         <ThemeSwitcher />
       </ThemeProvider>
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

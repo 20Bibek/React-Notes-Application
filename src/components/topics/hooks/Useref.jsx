@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 // import "./useref.css";
 import { FaRegLightbulb, FaCode, FaClock, FaExclamationCircle } from "react-icons/fa";
+import { RxDoubleArrowUp } from "react-icons/rx";
 
 const useRefData = {
   title: "useRef (Accessing DOM elements and persisting values)",
@@ -79,7 +80,7 @@ export default PreviousCount;`
   }
 };
 
-const Useref = () => {
+const Useref = ({scrollToTop}) => {
   return (
     <div className="container">
       <h1 className="title"><FaRegLightbulb className="icon" /> {useRefData.title}</h1>
@@ -126,6 +127,8 @@ const Useref = () => {
           </tbody>
         </table>
       </div>
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

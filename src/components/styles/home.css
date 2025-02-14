@@ -3,5 +3,6 @@
     height: 90vh;
     width: auto;
     display: flex;
+    flex-direction: column;
     /* position: relative; */
 }

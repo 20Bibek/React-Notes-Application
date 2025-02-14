@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react';
+import { SiAxios } from "react-icons/si";
+import axioss from "../../../assets/axioss.gif"
+import axiosss from "../../../assets/axiosss.gif"
+import { RxDoubleArrowUp } from 'react-icons/rx';
 
-const Axios = () => {
+const Axios = ({scrollToTop}) => {
   const data = {
     topic: "Axios in React",
     sub_topics: [
@@ -21,7 +25,7 @@ const Axios = () => {
           "While AJAX can perform the same tasks, Axios provides more functionality and features.",
           "Axios is a promise-based library, so you need to implement promise-based asynchronous HTTP requests."
         ],
-        image: "https://blogs.purecode.ai/blogs/wp-content/uploads/2024/02/http_request_yurrhv.gif"
+        image: axioss
       },
       {
         heading: "Advantages of using Axios in React",
@@ -43,14 +47,15 @@ const Axios = () => {
         ]
       },
       {
-        image: "https://media.geeksforgeeks.org/wp-content/uploads/20240730125031/a2.gif"
+        image: axiosss
       }
     ]
   };
 
   return (
     <div className='container'>
-      <h1>{data.topic}</h1>
+      <h1 className='title'><SiAxios />      {data.topic}</h1>
+      <hr />
       {data.sub_topics.map((ele, index) => (
         <section className='section' key={index}>
           {ele.heading && <h2>{ele.heading}</h2>}
@@ -61,9 +66,10 @@ const Axios = () => {
               ))}
             </ul>
           )}
-          {ele.image && <img src={ele.image} alt='' />}
+          {ele.image && <img className='advimg' src={ele.image} alt='' />}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
     </div>
   );
 };

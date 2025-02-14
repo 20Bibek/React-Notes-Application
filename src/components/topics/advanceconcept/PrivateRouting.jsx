@@ -1,6 +1,9 @@
 import React from 'react';
+import { SiPrivateinternetaccess } from "react-icons/si";
+import privatee from "../../../assets/private.webp"
+import { RxDoubleArrowUp } from 'react-icons/rx';
 
-const PrivateRouting = () => {
+const PrivateRouting = ({scrollToTop}) => {
   const data = {
     topic: "Private Routing in React",
     sub_topics: [
@@ -28,19 +31,24 @@ const PrivateRoute = ({ isAuthenticated }) => {
 export default PrivateRoute;`
       },
       {
+          image:privatee
+      },
+      {
         heading: "Implementing Private Routes",
         points: [
           "Wrap protected components with a PrivateRoute component.",
           "Use authentication state to determine if access is allowed.",
           "Redirect unauthorized users to the login page."
         ],
-        code: `import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
+        code: `import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Login from './Login';
 
-function App() {
-  const isAuthenticated = false; // Change this to true when logged in
+const PrivateRoute = ({ isAuthenticated }) => 
+  isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+
+const App = () => {
+  const isAuthenticated = false; // Change to true when logged in
 
   return (
     <Router>
@@ -52,9 +60,10 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
-export default App;`
+export default App;
+`
       },
       {
         heading: "Benefits of Private Routing",
@@ -69,7 +78,8 @@ export default App;`
 
   return (
     <div className='container'>
-      <h1>{data.topic}</h1>
+      <h1 className='title'><SiPrivateinternetaccess />      {data.topic}</h1>
+      <hr />
       {data.sub_topics.map((ele, index) => (
         <section key={index} className='section'>
           {ele.heading && <h2>{ele.heading}</h2>}
@@ -80,9 +90,11 @@ export default App;`
               ))}
             </ul>
           )}
-          {ele.code && <pre><code>{ele.code}</code></pre>}
+          {ele.code && <pre>{ele.code}</pre>}
+          {ele.image && <img className='advimg' src={ele.image} alt='' />}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
     </div>
   );
 };

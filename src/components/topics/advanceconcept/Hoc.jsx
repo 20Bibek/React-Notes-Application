@@ -1,6 +1,8 @@
 import React from 'react';
+import { MdOutlineAutoFixHigh } from "react-icons/md";
+import { RxDoubleArrowUp } from 'react-icons/rx';
 
-const Hoc = () => {
+const Hoc = ({scrollToTop}) => {
   const data = {
     topic: "Higher-Order Components (HOC)",
     sub_topics: [
@@ -53,7 +55,8 @@ const Hoc = () => {
 
   return (
     <div className='container'>
-      <h1>{data.topic}</h1>
+      <h1 className='title'><MdOutlineAutoFixHigh />      {data.topic}</h1>
+      <hr />
       {data.sub_topics.map((ele, index) => (
         <section key={index} className='section'>
           {ele.heading && <h2>{ele.heading}</h2>}
@@ -64,9 +67,10 @@ const Hoc = () => {
               ))}
             </ul>
           )}
-          {ele.image && <img src={ele.image} alt='' />}
+          {ele.image && <img className='advimg' src={ele.image} alt='' />}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRocket, FaCheckCircle, FaExclamationTriangle, FaSyncAlt, FaBolt, FaListAlt, FaBrain, FaFilter, FaLightbulb, FaBug, FaClipboardList } from "react-icons/fa";
+import { RxDoubleArrowUp } from "react-icons/rx";
 // import "./usereducer.css";
 
 const useMemoData = {
@@ -55,7 +56,7 @@ export default MemoExample;`,
   ]
 };
 
-const Usememo = () => {
+const Usememo = ({scrollToTop}) => {
   return (
     <div className="container">
       <h1 className="title">
@@ -97,6 +98,8 @@ const Usememo = () => {
           ))}
         </ul>
       </div>
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

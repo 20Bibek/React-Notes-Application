@@ -1,6 +1,7 @@
 import React from "react";
 // import "./usestate.css";
 import { FaCode, FaLightbulb, FaSync, FaArrowRight } from "react-icons/fa";
+import { RxDoubleArrowUp } from "react-icons/rx";
 
 const data = {
   title: {
@@ -22,6 +23,23 @@ const data = {
             <li><strong>A function to update the state</strong></li>
           </ul>
           <p>Whenever the state updates, React <strong>re-renders</strong> the component to reflect the changes in the UI.</p>
+          
+        </>
+      )
+    },
+    {
+      icon: <FaCode className="icon" />, 
+      title: "Usestate Features",
+      content: (
+        <>
+          <p>Whenever the state updates, React <strong>re-renders</strong> the component to reflect the changes in the UI.</p>
+          <p>Hooks are used in <strong>Functional based components</strong> only. <strong>Usestate</strong> helps to store datas and update it <strong>dynamically</strong></p>
+          <p>
+            Usestate always returns an array consist of 2 elements <strong>[initial value, update function]</strong>.
+          </p>
+          <p>Usestate helps to make react unidirectional</p>
+
+
         </>
       )
     },
@@ -34,7 +52,7 @@ const data = {
           <pre>
             {`import React, { useState } from "react";
 
-function Counter() {
+const Counter= ()=> {
   const [count, setCount] = useState(0); // Initial state: 0
 
   return (
@@ -66,7 +84,7 @@ export default Counter;`}
           <pre>
             {`import React, { useState } from "react";
 
-function Counter() {
+const Counter= ()=> {
   const [count, setCount] = useState(0);
 
   return (
@@ -90,7 +108,7 @@ export default Counter;`}
   ]
 };
 
-const Usestate = () => {
+const Usestate = ({scrollToTop}) => {
   return (
     <div className="container">
       <h1 className="title">{data.title.icon} {data.title.text}</h1>
@@ -101,6 +119,8 @@ const Usestate = () => {
           {section.content}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

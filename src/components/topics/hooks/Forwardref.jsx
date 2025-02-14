@@ -1,8 +1,9 @@
 import React, { useRef, forwardRef, useImperativeHandle, createRef, Component } from "react";
 // import "./forwardref.css";
 import { FaArrowRight, FaCode, FaLightbulb, FaExclamationTriangle, FaCheck } from "react-icons/fa";
+import { RxDoubleArrowUp } from "react-icons/rx";
 
-const ForwardRef = () => {
+const ForwardRef = ({scrollToTop}) => {
   const data = {
     title: "Forward Ref in React",
     sections: [
@@ -161,11 +162,13 @@ export default ParentComponent;`
           )}
           {section.code && (
             <pre>
-              <code>{section.code}</code>
+            {section.code}
             </pre>
           )}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 // import "./hooks.css";
 import { FaCheckCircle, FaCode, FaExclamationTriangle, FaReact } from "react-icons/fa";
+import { RxDoubleArrowUp } from "react-icons/rx";
 
 const hookData = {
   title: "React Hooks",
@@ -8,7 +9,7 @@ const hookData = {
     {
       title: "What are Hooks?",
       icon: <FaCode className="icon" />, 
-      content: "Hooks are functions in React that allow you to use state and lifecycle features inside functional components without writing class components. They were introduced in React 16.8 to simplify component logic and improve reusability."
+      content: "Hooks are simple javascript functions that we can use to isolate the reusable part from a functional component. Hooks can be stateful and can manage side-effects. React provides a bunch of standard in-built hooks."
     },
     {
       title: "Why Hooks?",
@@ -22,7 +23,7 @@ const hookData = {
         {
           rule: "Only call hooks at the top level:",
           description: "Hooks should not be used inside loops, conditions, or nested functions.",
-          code: `function MyComponent() {
+          code: `const usestateHook = ()=>{
   const [count, setCount] = useState(0);
   if (count > 5) {
     console.log("Count is greater than 5");
@@ -33,7 +34,7 @@ const hookData = {
         {
           rule: "Only call hooks from React functions:",
           description: "Hooks must be used inside function components or custom hooks.",
-          code: `function MyComponent() {
+          code: `const myComponent = ()=>{
   const [count, setCount] = useState(0);
   return <p>{count}</p>;
 }`
@@ -41,7 +42,7 @@ const hookData = {
         {
           rule: "Custom hooks must start with \"use\":",
           description: "Hooks should be prefixed with \"use\" to be recognized by React.",
-          code: `function useCustomHook() {
+          code: `const useCustomHook = ()=>{
   const [data, setData] = useState(null);
   return [data, setData];
 }`
@@ -49,7 +50,7 @@ const hookData = {
         {
           rule: "Hooks should be used in the same order in every render:",
           description: "React tracks hooks by their order in the function.",
-          code: `function MyComponent() {
+          code: `const MyComponent = ()=>{
   const [count, setCount] = useState(0);
   const [name, setName] = useState("React");
   return <p>{count} - {name}</p>;
@@ -58,7 +59,7 @@ const hookData = {
         {
           rule: "Hooks must be in functional components or custom hooks:",
           description: "Hooks cannot be used inside class components.",
-          code: `function MyComponent() {
+          code: `const MyComponent = ()=>{
   const [count, setCount] = useState(0);
   return <p>{count}</p>;
 }`
@@ -68,7 +69,7 @@ const hookData = {
   ]
 };
 
-const Hooks = () => {
+const Hooks = ({scrollToTop}) => {
   return (
     <div className="container">
       <h1 className="title">
@@ -91,6 +92,8 @@ const Hooks = () => {
           )}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

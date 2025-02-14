@@ -16,7 +16,19 @@ const FirstPage = () => {
   const [index,setIndex] = useState(0);
   const [isButtonVisible, setIsButtonVisible] = useState(false);
 
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   // const [buttonVisible,setButtonVisible] = useState(false)
+
+
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme); // Store user preference
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,7 +61,7 @@ const FirstPage = () => {
   const images = [
     { image: 'https://www.icoderzsolutions.com/blog/wp-content/uploads/2024/05/Major-Advantages-of-React-JS.webp' },
     { image: 'https://www.icoderzsolutions.com/blog/wp-content/uploads/2024/05/React-JS-Use-Cases.webp' },
-    { image: 'https://miro.medium.com/v2/resize:fit:1200/1*Sd09cMNCbyj42bRUnCxdZA.png' },
+    // { image: 'https://miro.medium.com/v2/resize:fit:1200/1*Sd09cMNCbyj42bRUnCxdZA.png' },
   ];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -162,7 +174,7 @@ const FirstPage = () => {
         <Tooltip
           key={index}
           id={`tooltip-${index}`}
-          place="bottom"
+          place="top"
           effect="solid"
           className="custom-tooltip"
         />
@@ -234,6 +246,27 @@ const FirstPage = () => {
           <Link to="/home" className="btnlink">Let's Code</Link>
         </button>
         </div>
+        <div className="firstpage-footer">
+        <div className="footer-content">
+        <div className="footer-section about">
+          <h2>About This Project</h2>
+          <p>
+            This React Notes Website is designed to help users learn and explore React concepts efficiently.
+          </p>
+        </div>
+        <div className="footer-section ">
+          <h2>Contact Us</h2>
+          <p>Email: reactscript@gmail.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        &copy; {new Date().getFullYear()} ReactScript | All Rights Reserved
+      </div>
+        </div>
+        <button className="theme-toggle-btn" onClick={toggleTheme}>
+        {theme === "light" ? "🌙" : "☀️"}
+      </button>
     </div>
   )
 }

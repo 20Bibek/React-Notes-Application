@@ -7,6 +7,18 @@ import { VscGitCompare } from 'react-icons/vsc';
 import { GiBookmark, GiBookmarklet, GiCycle } from 'react-icons/gi';
 import { GoHistory } from 'react-icons/go';
 import { BsBrilliance } from 'react-icons/bs';
+import { IoIosArrowDropupCircle } from 'react-icons/io';
+import { RxDoubleArrowUp } from 'react-icons/rx';
+
+import framework from '../../../assets/intro/framework.png'
+import history from '../../../assets/intro/history.png'
+import why_react from '../../../assets/intro/why_react.png'
+import advantage_react from '../../../assets/intro/advantage_react.png'
+import disadvantage_react from '../../../assets/intro/disadvantage_react.webp'
+import lifecycle_spa_mpa from '../../../assets/intro/lifecycle_spa_mpa.gif'
+import spa from '../../../assets/intro/spa.jpg'
+import mpa from '../../../assets/intro/mpa.jpg'
+
 
 
 const introData = {
@@ -51,7 +63,7 @@ const introData = {
         description:
           "It's a set of libraries. But this time, the framework does not just offer functionalities, but it also provides an architecture for the development work.",
       }],
-    image:'https://www.interviewbit.com/blog/wp-content/uploads/2021/10/Image-1-2.png'
+    image:framework
    },
    {
     id:3,
@@ -60,7 +72,7 @@ const introData = {
     para:['ReactJS is a component-based JavaScript library used to build dynamic and interactive user interfaces. It simplifies the creation of single-page applications (SPAs) with a focus on performance and maintainability.'],
     list:['Current version of React.JS is V18.0.0 (April 2022).', 'Initial Release to the Public (V0.3.0) was in July 2013.', "Facebook Software Engineer, Jordan Walke, created it.", 'Current version of create-react-app is v5.0.1 (April 2022).','create-react-app includes built tools such as webpack, Babel, and ESLint.'],
 
-    floatImage:'https://www.optimalvirtualemployee.com/wp-content/uploads/2023/02/ReactJS-History.png',
+    floatImage:history,
 
     para2:['Facebook faced a challenging task in 2011 when it wanted to build a faster, more responsive, and more dynamic user interface to offer users a richer user experience. ', 'The React framework was created by one of Facebook’s software engineers to simplify the development process by providing a more organized and structured way to build dynamic and interactive user interfaces. ', "Since its release to the open-source community, React quickly gained popularity in JavaScript’s ecosystem due to its revolutionary approach to DOM manipulation and user interfaces."]
    },
@@ -71,7 +83,7 @@ const introData = {
     para:['Today, React dominates all other front-end development frameworks. Here’s why:'],
     list:['Creating dynamic web applications is easier with React since it requires less coding and provides more functionality than JavaScript, where coding can get very complex very quickly.', "Improved performance: React uses Virtual DOM, resulting in faster web applications. A Virtual DOM compares the components’ previous states and updates only the items that have changed, rather than updating all components, as conventional web applications do.", 'Reusable components: Components are the building blocks of any React application, and a single application typically consists of multiple components. Reusing these components throughout the application dramatically reduces development time since they have logic and controls.'],
 
-    floatImage:'https://teknotrait.com/wp-content/uploads/2016/07/All-about-react-JS.png',
+    floatImage:why_react,
 
     list2:['A React app is designed with a unidirectional data flow. An application’s data flows in a single direction, so debugging errors and identifying where a problem occurs at any given moment is easier.', 'There is a small learning curve with React, as it mainly combines HTML and JavaScript concepts with some beneficial additions.', 'A framework called React Native, derived from React itself, is prevalent and is used for building beautiful mobile applications. Therefore, it can be used to create both web and mobile applications.', 'Facebook has released a Chrome extension that makes it easier and faster to debug React web applications.']
    },
@@ -92,7 +104,7 @@ const introData = {
       "Search engine friendly ReactJS.", "Modules and valid data make larger apps easier to manage by increasing readability."
     ],
     list2:["React makes the entire scripting environment process simpler.", "React integrates various architectures.", "It makes advanced maintenance easier and boosts output.","Guarantees quicker rendering", "The availability of a script for developing mobile apps is the best feature of React.", "A large community supports ReactJS."],
-    floatImage:'https://www.icoderzsolutions.com/blog/wp-content/uploads/2024/05/Major-Advantages-of-React-JS.webp'
+    floatImage:advantage_react
   },
   {
     id:7,
@@ -101,7 +113,7 @@ const introData = {
     list:["Steep learning curve: React’s concepts and abstractions can be challenging to understand, especially for developers new to front-end development.","Over-reliance on third-party libraries: React is often used with many third-party libraries, making it difficult to understand and debug the codebase.", "Poor server-side rendering performance: React’s server-side rendering performance can be slower than other options, such as Angular, due to its virtual DOM.", "Inconsistent documentation: React’s documentation is extensive, but it can be challenging to find the information you need, and some parts of the documentation may be outdated."
     ],
     list2:["Large bundle size: React applications can have a large JavaScript bundle size, affecting performance on slower devices or for users with low bandwidth.", "The complexity of state management: React’s simplicity can make it challenging to manage the state of large applications, especially when using its features, such as hooks, in complex ways."],
-    floatImage:'https://www.biztechcs.com/wp-content/uploads/2023/04/Disadvantages-of-React-JS.png',
+    floatImage:disadvantage_react,
     para2:["Despite these limitations, React remains a popular choice for front-end development, and its benefits often outweigh its limitations for many developers and organizations."]
   },
   {
@@ -145,7 +157,7 @@ const introData = {
        para:["As the names suggests, it is a single page where all information is available on the same page. It is even known as a type of web application architecture used to manage the components of a web app.", "A single-page application (SPA) is a web application that loads a single HTML page and updates it dynamically with JavaScript. This means that users don't need to wait for the entire page to reload when they click a link or submit a form."
        ],
       para2:["This approach enables faster transitions, mimicking the fluidity of native mobile apps. SPAs offer responsive and seamless user experiences by leveraging technologies like Angular, React.js, and Vue.js. They're ideal for creating interactive and rapid web applications.", "Examples include Gmail, Google Maps, Paypal, and Airbnb. ", "If you seek a fast, responsive, and easy-to-maintain web application, SPAs are an excellent choice. To delve deeper, explore our comprehensive guide on SPAs, covering their workings and advantages, and providing a precise understanding of the concept."],
-      floatImage:"https://media.geeksforgeeks.org/wp-content/uploads/20240726124329/Architechture-Of-SPA.webp"
+      floatImage:spa
     },
     {
       id:'10',
@@ -164,7 +176,7 @@ const introData = {
       icon:<BsBrilliance className='iconh2' />,
       heading:"What is Multi Page Applications(MPA)?",
       para:["A Multi-Page Application, or MPA, is a type of website or web application where each page is separately created and sent to our web browser by a server."],
-      floatImage:"https://andrejgajdos.com/wp-content/uploads/2020/04/single-page_application_vs_multiple-page_application.png",
+      floatImage:mpa,
       para2:["A multi-page application is a form of web application in which each user action causes a new page to load from the server. MPAs are made up of multiple static pages, each with a specific purpose, such as a homepage, product catalog, contact form, or user profile. These pages typically have unique layouts and functionalities tailored to their specific roles.","Examples of MPAs include eBay, Amazon, Facebook, and Twitter.", "They offer users a familiar browsing experience akin to navigating through different sections of a traditional website, with each page providing a dedicated interface for various tasks and content."]
     },
     {
@@ -231,7 +243,7 @@ const introData = {
       heading:"Lifecycle of SPAs",
       para:["In a Single Page Application (SPA) lifecycle, the initial page load involves fetching all necessary JavaScript and HTML, then subsequent user interactions trigger only data updates through AJAX requests, dynamically rendering content within the same page without full reloads."],
       list2:["Initial Page Load: User visits the website, the browser fetches the initial HTML, CSS, and JavaScript files. ", "User Interaction: User clicks a link on the page, triggering an AJAX request to the server.", "Data Fetching: Server sends back only the necessary data related to the new content.", "Client-Side Rendering: JavaScript on the client-side updates the DOM with the new data, dynamically changing the page content without a full reload."],
-      floatImage:"https://miro.medium.com/v2/resize:fit:1400/1*TgDJlZWCvSYz7486niWz3w.gif"
+      floatImage:lifecycle_spa_mpa
     },
     {
       id:17,
@@ -243,7 +255,11 @@ const introData = {
   ]
   
 }
-const Introduction = () => {
+
+
+ 
+const Introduction = ({scrollToTop}) => {
+
   return (
       <div className='container'>
         <h1>{introData.icontop}{introData.title}</h1>
@@ -362,6 +378,8 @@ const Introduction = () => {
             )
           })
         }
+
+       <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
         
       </div>
       

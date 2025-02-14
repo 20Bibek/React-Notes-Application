@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
+import { RxDoubleArrowUp } from 'react-icons/rx'
 
-const ConditionalRendering = () => {
+const ConditionalRendering = ({scrollToTop}) => {
 
   const conditionalRenderingData = {
     topic: "Conditional Rendering",
@@ -169,7 +170,8 @@ export default App;`,
   return (
     
       <div className='container'>
-        <h1>{conditionalRenderingData.topic}</h1>
+        <h1 className='title'>{conditionalRenderingData.topic}</h1>
+        <hr />
 
         {conditionalRenderingData.sub_topics.map((ele, index) => {
           return (
@@ -191,6 +193,8 @@ export default App;`,
             </Fragment>
           )
         })}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
 
 
       </div>

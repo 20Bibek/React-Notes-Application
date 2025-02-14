@@ -1,18 +1,23 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Sidebar from './Sidebar'
-import "./styles/home.css"
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import "./styles/home.css";
+import Footer from "./Footer";
+
 
 const Home = () => {
   return (
-    <div className='main'>
-   
-       <Sidebar/>
-    
-       <Outlet/>
- 
-    </div>
-  )
-}
+    <div className="main">
+      <div style={{ display: "flex" }}>
+        <Sidebar />
 
-export default Home
+        <Outlet />
+      </div>
+
+      <Footer />
+      
+    </div>
+  );
+};
+
+export default Home;

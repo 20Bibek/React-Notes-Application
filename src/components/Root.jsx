@@ -39,6 +39,10 @@ import Routing from './topics/router/Router'
 import ContactForm from './Contact'
 import About from './About'
 
+const scrollToTop = () => {
+  document.querySelector('.container').scrollTo({ top: 0, behavior:'smooth' });
+  // document.querySelector('.footer').scrollTo({ top: 0, behavior:'smooth' });
+};
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -51,42 +55,42 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "",
-            element: <Introduction />,
+            element: <Introduction scrollToTop={scrollToTop}/>,
             
           },
-          { path: "component", element: <Comp /> },
-          { path: "conditional", element: <ConditionalRendering /> },
-          { path: "features", element: <Features /> },
-          { path: "gettingstarted", element: <GettingStarted /> },
-          { path: "jsx", element: <JsxComp /> },
-          { path: "formhandling", element: <Formhandling /> },
-          { path: "fragments", element: <Fragments /> },
-          { path: "props", element: <Props /> },
+          { path: "component", element: <Comp scrollToTop={scrollToTop}/> },
+          { path: "conditional", element: <ConditionalRendering scrollToTop={scrollToTop}/> },
+          { path: "features", element: <Features scrollToTop={scrollToTop}/> },
+          { path: "gettingstarted", element: <GettingStarted scrollToTop={scrollToTop}/> },
+          { path: "jsx", element: <JsxComp scrollToTop={scrollToTop}/> },
+          { path: "formhandling", element: <Formhandling scrollToTop={scrollToTop}/> },
+          { path: "fragments", element: <Fragments scrollToTop={scrollToTop}/> },
+          { path: "props", element: <Props scrollToTop={scrollToTop}/> },
           {
             path: "hooks",
-            element: <Hooks />,
+            element: <Hooks scrollToTop={scrollToTop}/>,
           },
-          { path: "usestate", element: <Usestate /> },
-              { path: "forwardref", element: <Forwardref /> },
-              { path: "usecallback", element: <Usecallback /> },
-              { path: "usecontext", element: <Usecontext /> },
-              { path: "useeffect", element: <Useeffect /> },
-              { path: "usememo", element: <Usememo /> },
-              { path: "usenavigate", element: <Usenavigate /> },
-              { path: "usereducer", element: <Usereducer /> },
-              { path: "useref", element: <Useref /> },
+          { path: "usestate", element: <Usestate scrollToTop={scrollToTop}/> },
+              { path: "forwardref", element: <Forwardref scrollToTop={scrollToTop}/> },
+              { path: "usecallback", element: <Usecallback scrollToTop={scrollToTop}/> },
+              { path: "usecontext", element: <Usecontext scrollToTop={scrollToTop}/> },
+              { path: "useeffect", element: <Useeffect scrollToTop={scrollToTop}/> },
+              { path: "usememo", element: <Usememo scrollToTop={scrollToTop}/> },
+              { path: "usenavigate", element: <Usenavigate scrollToTop={scrollToTop}/> },
+              { path: "usereducer", element: <Usereducer scrollToTop={scrollToTop}/> },
+              { path: "useref", element: <Useref scrollToTop={scrollToTop}/> },
           {
             path: "advanceconcept",
-            element: <Advanceconcept />,
+            element: <Advanceconcept scrollToTop={scrollToTop}/>,
            
           },
-          { path: "axios", element: <Axios /> },
-          { path: "hoc", element: <Hoc /> },
-          { path: "privaterouting", element: <PrivateRouting /> },
-          { path: "reactmemo", element: <Reactmemo /> },
+          { path: "axios", element: <Axios scrollToTop={scrollToTop}/> },
+          { path: "hoc", element: <Hoc scrollToTop={scrollToTop}/> },
+          { path: "privaterouting", element: <PrivateRouting scrollToTop={scrollToTop}/> },
+          { path: "reactmemo", element: <Reactmemo scrollToTop={scrollToTop}/> },
           {
             path: "routing",
-            element: <Routing/>
+            element: <Routing scrollToTop={scrollToTop}/>
 
           }
         ]

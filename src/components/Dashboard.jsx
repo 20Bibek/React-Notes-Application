@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { Link, Outlet, useParams } from 'react-router-dom'
-import Footer from './Footer'
 
 const Dashboard = () => {
     
@@ -10,7 +9,7 @@ const Dashboard = () => {
         <Navbar/>
         
         <Outlet/>
-     <Footer/>
+
     </div>
   )
 }

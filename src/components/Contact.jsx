@@ -36,7 +36,7 @@ const ContactForm = () => {
               {text.split('').map((char, i) => {
                 const key =` ${i}`;
                 return (
-                  <span key={key} style={{ color: '#29017a', fontWeight: "600" }}>
+                  <span key={key} style={{ color: '#29017a', fontWeight: "600" }} className='typingtext'>
                     {char}
                   </span>
                 );
@@ -45,13 +45,18 @@ const ContactForm = () => {
           );
         }}
       />{' '}
-      <br /> please don't hesitate to reach out to us.
+      <br /> please don't <span className="glow-text">hesitate</span><br /><span> to </span>   
+      <span className="word word-reach">reach</span>{' '}
+  <span className="word word-out">out</span>{' '}
+  <span className="word word-to">to</span>{' '}
+  <span className="word word-us">us</span>.
 
  </h2>
 
             <form ref={form} 
     onSubmit={sendEmail}
     >
+      <h2 className='form-heading'>Contact Us</h2>
        
        <div className="input-container">
     <input type="text" name="user_name" required />
@@ -72,4 +77,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default ContactForm;

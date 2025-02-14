@@ -1,4 +1,5 @@
 import React from 'react'
+import { RxDoubleArrowUp } from 'react-icons/rx';
 
 const propsData = {
   title: "🔥 Props in React: A Detailed Explanation",
@@ -118,10 +119,10 @@ const propsData = {
 };
 
 
-const Props = () => {
+const Props = ({scrollToTop}) => {
   return (
     <div className="container">
-      <h1>{propsData.title}</h1>
+      <h1 className='title'>{propsData.title}</h1>
       <hr />
 
       {propsData.sections.map((section) => (
@@ -140,7 +141,7 @@ const Props = () => {
 
           {section.code && (
             <pre>
-              <code>{section.code}</code>
+              <pre>{section.code}</pre>
             </pre>
           )}
 
@@ -174,6 +175,8 @@ const Props = () => {
           )}
         </div>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   )
 }

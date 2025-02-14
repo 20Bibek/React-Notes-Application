@@ -3,6 +3,7 @@ import { CiRoute, CiSquareQuestion } from 'react-icons/ci';
 import { FaCode, FaReact, FaRegFolder, FaSync } from 'react-icons/fa';
 import { GrConfigure } from 'react-icons/gr';
 import { MdInstallDesktop, MdRoute } from 'react-icons/md';
+import { RxDoubleArrowUp } from 'react-icons/rx';
 import { TbBrandTailwind, TbBrandTypescript, TbFolder } from 'react-icons/tb';
 
 
@@ -140,11 +141,11 @@ const reactGuide = {
 };
 
 
-const GettingStarted = () => {
+const GettingStarted = ({scrollToTop}) => {
   return (
     <div className="container">
       {/* Title */}
-      <h1><FaReact className='iconh1'/>{reactGuide.title}</h1>
+      <h1 className='title'><FaReact className='iconh1'/>{reactGuide.title}</h1>
       <hr />
 
        {/* Prerequisites Section */}
@@ -184,7 +185,7 @@ const GettingStarted = () => {
             <ul>
               {method.steps.map((step, idx) => (
                 <li key={idx}>{step.list}
-                <code> {step.link}</code>
+                <pre> {step.link}</pre>
                 </li>
               ))}
             </ul>
@@ -206,7 +207,7 @@ const GettingStarted = () => {
         <div  className='code'>
         {
           reactGuide.folderStructure.code.map((codes,idx)=>(
-              <p >{codes}</p>
+              <pre >{codes}</pre>
           ))
         }
         </div>
@@ -238,6 +239,8 @@ const GettingStarted = () => {
           </div>
         ))}
       </section>
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   )
 }

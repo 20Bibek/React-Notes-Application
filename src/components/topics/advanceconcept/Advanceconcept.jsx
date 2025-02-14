@@ -1,6 +1,9 @@
 import React from 'react';
+import { TbBrandRedux } from "react-icons/tb";
+import redux1 from "../../../assets/redux1.gif"
+import { RxDoubleArrowUp } from 'react-icons/rx';
 
-const Advanceconcept = () => {
+const Advanceconcept = ({scrollToTop}) => {
   const data = {
     topic: "Redux and Redux Toolkit",
     sub_topics: [
@@ -19,6 +22,9 @@ const Advanceconcept = () => {
           "State is Read-Only - The only way to modify the state is by dispatching an action.",
           "Changes are made with Pure Functions - Reducers handle state updates and return a new state."
         ]
+      },
+      {
+        image:redux1
       },
       {
         heading: "What is Redux Toolkit?",
@@ -57,7 +63,8 @@ export const store = configureStore({ reducer: { counter: counterSlice.reducer }
 
   return (
     <div className='container'>
-      <h1>{data.topic}</h1>
+      <h1 className='title'><TbBrandRedux />{data.topic}</h1>
+      <hr />
       {data.sub_topics.map((ele, index) => (
         <section key={index} className='section'>
           {ele.heading && <h2>{ele.heading}</h2>}
@@ -68,9 +75,11 @@ export const store = configureStore({ reducer: { counter: counterSlice.reducer }
               ))}
             </ul>
           )}
-          {ele.code && <pre><code>{ele.code}</code></pre>}
+          {ele.code && <pre>{ele.code}</pre>}
+          {ele.image && <img className='advimg' src={ele.image} alt='' />}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
     </div>
   );
 };

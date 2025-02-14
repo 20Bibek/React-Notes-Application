@@ -38,6 +38,7 @@ const Footer = () => {
       <div className="footer-bottom">
         &copy; {new Date().getFullYear()} ReactScript | All Rights Reserved
       </div>
+      
     </footer>
   );
 };

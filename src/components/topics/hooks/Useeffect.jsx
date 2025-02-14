@@ -1,6 +1,7 @@
 import React from "react";
 // import "./useeffect.css";
 import { FaSync, FaCode, FaClipboardList, FaBolt, FaRocket, FaExclamationTriangle } from "react-icons/fa";
+import { RxDoubleArrowUp } from "react-icons/rx";
 
 const useEffectData = {
   title: "useEffect Hook",
@@ -130,7 +131,7 @@ export default Notes;`,
   ]
 };
 
-const Useeffect = () => {
+const Useeffect = ({scrollToTop}) => {
   return (
     <div className="container">
       <h1 className="title">
@@ -162,6 +163,8 @@ const Useeffect = () => {
           ))}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

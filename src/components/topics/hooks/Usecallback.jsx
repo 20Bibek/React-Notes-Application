@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRocket, FaCheckCircle, FaExclamationTriangle, FaSyncAlt, FaBolt, FaListAlt, FaBrain, FaFilter, FaLightbulb, FaBug, FaClipboardList } from "react-icons/fa";
+import { RxDoubleArrowUp } from "react-icons/rx";
 // import "./usereducer.css";
 
 const data = {
@@ -61,7 +62,7 @@ const data = {
   ]
 };
 
-const UseCallback = () => {
+const UseCallback = ({scrollToTop}) => {
   return (
     <div className="container">
       <h1 className="title">
@@ -81,6 +82,8 @@ const UseCallback = () => {
           </ul>
         </div>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
+
     </div>
   );
 };

@@ -1,6 +1,9 @@
 import React from 'react';
+import { MdOutlineMemory } from "react-icons/md";
+import { RxDoubleArrowUp } from 'react-icons/rx';
 
-const Reactmemo = () => {
+
+const Reactmemo = ({scrollToTop}) => {
   const data = {
     topic: "React Memo",
     sub_topics: [
@@ -59,7 +62,8 @@ const Reactmemo = () => {
 
   return (
     <div className='container'>
-      <h1>{data.topic}</h1>
+      <h1 className='title'><MdOutlineMemory />      {data.topic}</h1>
+      <hr />
       {data.sub_topics.map((ele, index) => (
         <section key={index} className='section'>
           {ele.heading && <h2>{ele.heading}</h2>}
@@ -70,9 +74,10 @@ const Reactmemo = () => {
               ))}
             </ul>
           )}
-          {ele.image && <img src={ele.image} alt='' />}
+          {ele.image && <img className='advimg' src={ele.image} alt='' />}
         </section>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
     </div>
   );
 };
