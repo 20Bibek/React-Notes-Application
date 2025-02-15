@@ -6,6 +6,7 @@ import learningAnimation from '../assets/learning animation.json'
 import { FaBookOpen, FaSearch, FaSun, FaCode, FaLaptop, FaChalkboardTeacher, FaUserGraduate, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiExpress, SiMongodb } from 'react-icons/si'
 import { IoLogoCss3 } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 const About = () => {
     const features = [
@@ -70,7 +71,7 @@ const About = () => {
         { id: 5, name: "CSS", image: <IoLogoCss3 /> },
       ];
   return (
-    <div>
+    <div className='about-container'>
         <section className="about-intro">
       <div className="intro-content">
         <h2 className='sh_h2'>Welcome to <span>ReactNotes 📘</span></h2>
@@ -79,7 +80,7 @@ const About = () => {
           ReactJS from the basics to advanced concepts.  
           Learn with interactive examples, organized notes, and real-world projects.
         </p>
-        <button className="cta-button">Start Learning Now</button>
+        <button className="cta-button"><Link to="/home" className='link1'>Start Learning Now</Link></button>
       </div>
       <div className="intro-visual">
         <Lottie animationData={reactAnimation} loop={true} />

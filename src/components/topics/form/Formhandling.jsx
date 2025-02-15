@@ -3,7 +3,11 @@ import { PiNumberSquareTwoFill } from "react-icons/pi";
 import { SiPreact } from "react-icons/si";
 import { FcSalesPerformance } from "react-icons/fc";
 import { PiNumberSquareOneFill } from "react-icons/pi";
+import difference from "../../../assets/form/form_difference.jpg"
+import uncontrolled from "../../../assets/form/uncontrolled-form.jpg"
+import controlled from "../../../assets/form/controlled-form.jpg"
 import { RxDoubleArrowUp } from 'react-icons/rx';
+
 const Formhandling = ({scrollToTop}) => {
 
 
@@ -56,7 +60,7 @@ const ReactForm=()=>{
 }
 
 export default reactForm;`,
-        image: "https://miro.medium.com/v2/resize:fit:1400/1*8DAOmL_wWhiJ3LPRZBz-Ww.jpeg"
+        image:difference
       },
       {
         heading: " Uncontrolled Forms",
@@ -111,7 +115,7 @@ const UncontrolledForm=()=>{
 }
 export default UncontrolledForm;`,
 
-        image: "https://www.scaler.com/topics/images/flow-of-uncontrolled-component.webp"
+        image: uncontrolled
       },
       {
         heading: " Controlled Forms",
@@ -179,7 +183,7 @@ const ControlledForm=()=>{
 
 export default ControlledForm;`,
 
-        image: "https://www.scaler.com/topics/images/flow-of-controlled-component.webp"
+        image: controlled
 
       }
 
@@ -189,8 +193,7 @@ export default ControlledForm;`,
 
   return (
     <div className='container'>
-      <h1 className='title'>{FormHandlingData.icon}{FormHandlingData.topic}</h1>
-      <hr />
+      <h1 className=''>{FormHandlingData.icon}{FormHandlingData.topic}</h1>
 
       {FormHandlingData.sub_topics.map((ele, index) => {
         return (
@@ -205,17 +208,15 @@ export default ControlledForm;`,
                 })}
 
               </ul>
-              <img src={ele.image} width='40%' />
-
+<center>   <img src={ele.image} width='40%' /></center>
             </section>
             <pre>{ele.code}</pre>
           </Fragment>
 
         )
       })}
-      <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
 
-
+<button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>
     </div>
 
   )

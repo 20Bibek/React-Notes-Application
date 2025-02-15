@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./styles/navbar.css";
-// import "/global.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +14,7 @@ const Navbar = () => {
 
   const handleThemeChange = (newTheme) => {
     setTheme(newTheme);
-    setShowOptions(false); // Hide buttons after selection
+    setShowOptions(false);
   };
 
   const toggleMenu = () => {
@@ -49,20 +48,20 @@ const Navbar = () => {
         <li><Link to="/about" className='link'>About</Link></li>
         <li><Link to="/contact" className='link'>Contact</Link></li>
         <li><Link to="/login" className='link'>Login</Link></li>
-      </ul>
-      {/* Theme Toggle Button */}
-      <div className="theme-toggle">
-        <button id="theme-button" onClick={() => setShowOptions(!showOptions)}>
-          🌗 Theme
-        </button>
 
-        {showOptions && (
-          <div className="theme-options">
-            <button onClick={() => handleThemeChange("light")}>☀️ Light</button>
-            <button onClick={() => handleThemeChange("dark")}>🌙 Dark</button>
-          </div>
-        )}
-        </div>
+        {/* Theme Toggle Button (Visible only in mobile view) */}
+        <li className="theme-toggle-mobile">
+          <button on id="theme-button" onClick={() => setShowOptions(!showOptions)}>
+            🌗 Theme
+          </button>
+          {showOptions && (
+            <div className="theme-options">
+              <button onClick={() => handleThemeChange("light")}>☀️ Light</button>
+              <button onClick={() => handleThemeChange("dark")}>🌙 Dark</button>
+            </div>
+          )}
+        </li>
+      </ul>
     </nav>
   );
 };

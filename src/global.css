@@ -8,6 +8,11 @@
   height: 100vh;
   width: 100%;
 }
+.active{
+  background-color: #4200c7;
+  border-radius: 10px;
+  /* padding: 10px 20px; */
+}
 
   .container {
       height: 92.7vh;
@@ -17,6 +22,7 @@
       overflow-y: scroll;
       scrollbar-width: none;
       width: 100%;
+
     }
     
     .container::-webkit-scrollbar {
@@ -103,7 +109,7 @@
     
     .container code {
       font-family: "Courier New", monospace;
-      color: #9b0084;
+      color: #ffcc00;
       font-weight: 600;
       font-size: 20px;
     }
@@ -175,6 +181,10 @@
 .scroll-to-top {
   width: 50px;
   height: auto;
+}
+.container{
+  margin-top: 70px;
+
 }
 }
 
@@ -263,6 +273,37 @@ body[data-theme="dark"] .container ul li, body[data-theme="dark"] .container ol 
 
 color: #ffffff;
 }
+
+body[data-theme="dark"] .intro-content .sh_h2{
+  color: #dcdcdc;
+  }
+  body[data-theme="dark"] .purpose-content .sh_h2{
+    color: #ffffff;
+    }
+  body[data-theme="dark"] .key-features .sh_h2{
+      color: #ffffff;
+    }
+    body[data-theme="dark"] .target-audience .sh_h2{
+      color: #ffffff;
+      }
+      body[data-theme="dark"] .tech-stack .sh_h2{
+        color: #ffffff;
+        }
+   body[data-theme="dark"] .intro-content .sh_p{
+    color: #ffffff;
+    }
+    body[data-theme="dark"] .purpose-content .sh_p{
+      color: #ffffff;
+      }
+      body[data-theme="dark"]   .feature-card, .audience-card{
+        background-color: #d7d7d7;
+        }
+        body[data-theme="dark"] .feature-card .sh_h3{
+          color: black;
+          }
+        body[data-theme="dark"] .audience-card .sh_h3{
+          color: black;
+          }
 
 /* ====== Theme Toggle Button Styles ====== */
 

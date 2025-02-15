@@ -1,6 +1,8 @@
 import React from 'react';
 import { MdOutlineMemory } from "react-icons/md";
 import { RxDoubleArrowUp } from 'react-icons/rx';
+import memo1 from "../../../assets/memo1.png"
+import memo2 from "../../../assets/memo2.gif"
 
 
 const Reactmemo = ({scrollToTop}) => {
@@ -18,7 +20,7 @@ const Reactmemo = ({scrollToTop}) => {
         ]
       },
       {
-        image: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjqd2j8y38gwp9x9p783f.png"
+        image:memo1
       },
       {
         heading: "How Memoization Works",
@@ -55,7 +57,7 @@ const Reactmemo = ({scrollToTop}) => {
         ]
       },
       {
-        image: "https://miro.medium.com/v2/1*HigXYl3KCWHlvmVk4hRV4Q.gif"
+        image:memo2
       }
     ]
   };
@@ -74,7 +76,7 @@ const Reactmemo = ({scrollToTop}) => {
               ))}
             </ul>
           )}
-          {ele.image && <img className='advimg' src={ele.image} alt='' />}
+         <center> {ele.image && <img className='advimg' src={ele.image} alt='' />}</center>
         </section>
       ))}
       <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>

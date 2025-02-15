@@ -19,8 +19,8 @@ const Routing = ({scrollToTop}) => {
         heading: "Installation of React Router",
         points: [
           "To install React Router, run the command:",
-          "npm install react-router-dom",
-          "or",
+          "npm install react-router-dom or",
+          
           "yarn add react-router-dom"
         ]
       },
@@ -145,7 +145,7 @@ export default App;`,
               ))}
             </ul>
           )}
-          {ele.code && <pre><code>{ele.code}</code></pre>}
+          {ele.code && <pre>{ele.code}</pre>}
           {ele.explanation && (
             <ul>
               {ele.explanation.map((exp, idx) => (
@@ -153,7 +153,7 @@ export default App;`,
               ))}
             </ul>
           )}
-          {ele.image && <img src={ele.image} alt='' />}
+         <center>{ele.image && <img className='advimg' src={ele.image} alt='' />}</center> 
         </section>
       ))}
       <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>

@@ -447,6 +447,7 @@ body[data-theme="dark"] .textbox3 h1{
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   animation: jump 2s infinite ease-in-out;
+  z-index: 10000;
 }
 
 /* 🌙 Dark Mode Button */
@@ -795,6 +796,7 @@ overflow: hidden;
 width: 100%;
 /* background-color: rgb(168, 238, 238); */
 overflow: hidden; /* Ensures no extra space */
+margin-top: 70px;
 }
 
 .menu {
@@ -824,7 +826,7 @@ white-space: nowrap; /* Prevents breaking into multiple lines */
     width: 95%;
     padding: 15px;
     text-align: center;
-    overflow-x: hidden;
+    overflow-x:hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -903,7 +905,7 @@ white-space: nowrap; /* Prevents breaking into multiple lines */
   padding: 10px 40px;
   /* margin-left: 160px; */
   margin-top: -50px;
-  top: 360px;
+  top: 420px;
 }
 .firstpage-footer {
   flex-direction: column;

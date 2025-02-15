@@ -1,6 +1,7 @@
 import React from 'react';
 import { MdOutlineAutoFixHigh } from "react-icons/md";
 import { RxDoubleArrowUp } from 'react-icons/rx';
+import Hocc from "../../../assets/Hoc.webp"
 
 const Hoc = ({scrollToTop}) => {
   const data = {
@@ -21,7 +22,7 @@ const Hoc = ({scrollToTop}) => {
           "✅ Separation of Concerns – Keep UI and logic separate.",
           "✅ Enhancing Components Dynamically – Add features like authentication, logging, or performance tracking."
         ],
-        image: "https://cdn.prod.website-files.com/670cbf146221ee06c3cdd761/676277a637626ac815ef0b04_676277896780c79dde32dd07_How%2520to%2520Use%2520Higher-Order%2520Components%2520(HOCs)%2520in%2520React.webp"
+        image: Hocc
       },
       {
         heading: "Important Notes on HOCs",
@@ -67,7 +68,7 @@ const Hoc = ({scrollToTop}) => {
               ))}
             </ul>
           )}
-          {ele.image && <img className='advimg' src={ele.image} alt='' />}
+          <center>{ele.image && <img className='advimg' src={ele.image} alt='' />}</center>
         </section>
       ))}
       <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>

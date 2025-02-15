@@ -91,7 +91,7 @@ export default App;
             </ul>
           )}
           {ele.code && <pre>{ele.code}</pre>}
-          {ele.image && <img className='advimg' src={ele.image} alt='' />}
+          <center>{ele.image && <img className='advimg' src={ele.image} alt='' />}</center>
         </section>
       ))}
       <button className="scroll-to-top" onClick={scrollToTop}><RxDoubleArrowUp /></button>

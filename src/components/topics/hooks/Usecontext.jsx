@@ -16,15 +16,29 @@ const contextData = {
   ],
   syntax: {
     create: "const MyContext = createContext();",
-    provider: "const MyProvider = ({ children }) => { const value = 'Hello from Context'; return <MyContext.Provider value={value}>{children}</MyContext.Provider>; };",
-    consume: "const ChildComponent = () => { const contextValue = useContext(MyContext); return <h2>{contextValue}</h2>; };",
+    provider:` const MyProvider = ({ children }) => { 
+      const value = 'Hello from Context'; 
+      return <MyContext.Provider value={value}>{children}</MyContext.Provider>; 
+    };`,
+    consume: `const ChildComponent = () => { 
+      const contextValue = useContext(MyContext);
+       return <h2>{contextValue}</h2>; 
+      };`,
   },
   themeExample: {
     title: "🏆 Step-by-Step Example of useContext",
     createContext: "export const ThemeContext = createContext(null);",
     provider:
-      "const [theme, setTheme] = useState('light'); const toggleTheme = () => { setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light'); }; return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;",
-    consume: "const { theme, toggleTheme } = useContext(ThemeContext); return <div style={{ background: theme === 'light' ? '#fff' : '#333', color: theme === 'light' ? '#000' : '#fff' }}><h2>Current Theme: {theme}</h2><button onClick={toggleTheme}>Toggle Theme</button></div>;",
+      `const [theme, setTheme] = useState('light'); 
+      const toggleTheme = () => { 
+        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+       };
+       return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;`,
+    consume: `const { theme, toggleTheme } = useContext(ThemeContext); 
+    return <div style={{ background: theme === 'light' ? '#fff' : '#333', color: theme === 'light' ? '#000' : '#fff' }}>
+    <h2>Current Theme: {theme}</h2>
+    <button onClick={toggleTheme}>Toggle Theme</button>
+    </div>;`,
   },
   whenToUse: [
     "🔹 For global state – Themes, authentication, user preferences, language settings.",
