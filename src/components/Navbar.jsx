@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Theme Toggle Button (Visible only in mobile view) */}
         <li className="theme-toggle-mobile">
-          <button on id="theme-button" onClick={() => setShowOptions(!showOptions)}>
+          <button id="theme-button" onClick={() => setShowOptions(!showOptions)}>
             🌗 Theme
           </button>
           {showOptions && (

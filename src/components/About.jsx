@@ -70,6 +70,40 @@ const About = () => {
         { id: 4, name: "Express.js", image: <SiExpress /> },
         { id: 5, name: "CSS", image: <IoLogoCss3 /> },
       ];
+      const teamMembers = [
+        {
+          id: 1,
+          name: "Sushree",
+          image: "src/assets/profilepicture/Sushree1.jpg",
+        },
+        {
+          id: 2,
+          name: "Bibek",
+          image: "src/assets/profilepicture/Bibek.jpg",
+        },
+        {
+          id: 3,
+          name: "Amarnath",
+          image: "src/assets/profilepicture/Amarnath.jpg",
+        },
+        {
+          id: 4,
+          name: "Anup",
+          image: "src/assets/profilepicture/Anup.jpg",
+        },
+        {
+          id: 5,
+          name: "Amarjeet",
+          image: "src/assets/profilepicture/Amarjeet.jpg",
+        },
+        {
+          id: 6,
+          name: "Aryan",
+          image: "src/assets/profilepicture/Aryan.jpg",
+        },
+      ];
+      
+      
   return (
     <div className='about-container'>
         <section className="about-intro">
@@ -141,6 +175,20 @@ const About = () => {
         ))}
       </div>
     </section>
+    <section className="team-section">
+      <h2 className='sh_h2'>
+        <span className="animated-text">🚀 Explore Our Team</span>
+      </h2>
+      <div className="team-grid">
+        {teamMembers.map((member) => (
+          <div className="team-card" key={member.id}>
+            <img src={member.image} alt={member.name} className="team-image" />
+            <h3 className="sh_h3">{member.name}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
+
     </div>
   )
 }

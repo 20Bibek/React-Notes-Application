@@ -23,7 +23,7 @@
   }
   
   .cta-button {
-    background-color: #5A2BCB;
+    background-color: #29017a;
     border: none;
     padding: 18px 30px;
     font-size: 1.1rem;
@@ -71,7 +71,7 @@
   
   .icon {
     font-size: 3rem;
-    color: #5A2BCB;
+    color: #29017a;
   }
   
   /* Tech Stack Section */
@@ -107,6 +107,87 @@
     margin-top: 10px;
     color: #333;
   }
+
+
+  /* team section */
+
+  .team-section {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px 20px;
+  }
+  
+  .animated-text {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    /* background: linear-gradient(90deg, #ff8c00, #4f13c8); */
+    /* -webkit-background-clip: text; */
+    color: #fff;
+    animation: glowing 1.5s infinite alternate;
+  }
+  
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .team-card {
+    background-color: rgb(217, 216, 216);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #5816db;
+  }
+  
+  .team-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 20%;
+    object-fit:cover;
+    object-position:top ;
+    /* background-size: contain; */
+    /* background-position: center; */
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .team-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (max-width: 429px) {
+    .team-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
   
   /* Responsive Design */
   
